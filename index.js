@@ -104,12 +104,6 @@ async function launch() {
   				let typ = getContentType(cht.message);
   				console.log((/protocolMessage/i.test(typ)) ? `${cht.key.participant.split('@')[0]} Deleted story❗` : 'View user stories : ' + cht.key.participant.split('@')[0]);
   			}
-  			let update = await func.getUpdate()
-  			if (update.updateAvailable) {
-  			  Exp.sendMessage('62895710073737@s.whatsapp.net', {
-  			    text: `Update tersedia untuk versi terbaru: ${update.latestVersion}\n\nChangelog:\n${update.changes}\n\nKetik /upgrade untuk mengupgrade.`
-  			  })
-  			}
   			await helper({Exp, store, cht, In, func, ai, color, bgcolor, ArchiveMemories, EventEmitter, getContentType})
   		});
 }
